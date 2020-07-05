@@ -1,0 +1,28 @@
+{
+  "name": "NextTODOList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@zeit/next-sass": "^1.0.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "emotion": "^10.0.27",
+    "next": "^7.0.2",
+    "node-sass": "^4.14.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "styled-components": "^5.1.1"
+  }
+}
