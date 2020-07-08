@@ -1,34 +1,66 @@
 import React from 'react';
 import Head from 'next/head';
-import { css } from 'emotion';
-import styled from '@emotion/styled';
 import Link from 'next/link';
+import styled from 'styled-components';
+import AppCard from '../components/atoms/AppCard';
+import AppPanel from '../components/atoms/AppPanel';
+import PanelList from '../components/organis/PanelList';
+import styles from '../styles/margin.scss';
+import TheHeader from '../components/organis/TheHeader';
+import NavList from '../components/organis/NavList';
 
 export default class SomePage extends React.Component {
-
-  // getInitialProps = asyncData
-  // pagaでのみ使える
   static async getInitialProps() {
     const hoge = 'hoge';
     return { hoge };
   }
 
   render () {
-    const H1 = styled.h1({
-      margin: '0',
-    });
+    console.log(styles);
 
     return (
       <div>
         <Head>
           <title>hoge</title>
         </Head>
-        <H1>
-          {this.props.hoge}
-        </H1>
-        <img src="/static/images/momo.png" />
-        <Link href="/hoge">hoge</Link>
+        <TheHeader className={styles.example} />
+        <NavList />
+        <Main>
+          <Inner>
+            <AppCard
+              title="タイトル"
+              headerText={<span>テキストテキストテキスト<br />テキストテキストテキスト</span>}
+            >
+              <PanelList>
+                <AppPanel panelTitle="パネルタイトル">
+                  パネル1
+                </AppPanel>
+                <AppPanel panelTitle="パネルタイトル">
+                  <span>テキストテキストテキスト<br />テキストテキスト</span>
+                </AppPanel>
+                <AppPanel panelTitle="パネルタイトル">
+                  <span>テキストテキスト<br />テキストテキスト<br />テキストテキスト</span>
+                </AppPanel>
+                <AppPanel panelTitle="パネルタイトル">
+                  <span>テキストテキストテキスト<br />テキストテキスト</span>
+                </AppPanel>
+              </PanelList>
+            </AppCard>
+            <Link href="/hoge"><a>Hoge</a></Link>
+          </Inner>
+        </Main>
       </div>
     )
   }
 }
+
+const Main = styled.main`
+  padding: 20px;
+  background: #f1f5f8;
+  min-height: 100vh;
+`;
+
+const Inner = styled.div`
+  margin: 0 auto;
+  width: 944px;
+`;

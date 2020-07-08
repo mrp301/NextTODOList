@@ -5,27 +5,35 @@ import { color } from '../../utils/color';
 const navListItem = ['マイページ', 'お題一覧', '設定'];
 const NavList = () => {
   return (
-    <NavLists>
-      {navListItem.map((item, index) => (
-        <li key={index}>
-          <Link href="/">{item}</Link>
-        </li>
-      ))}
-    </NavLists>
+    <Nav>
+      <NavLists>
+        {navListItem.map((item, index) => (
+          <li key={index}>
+            <Link href="/"><a>{item}</a></Link>
+          </li>
+        ))}
+      </NavLists>
+    </Nav>
   );
 };
+
+const Nav = styled.div`
+  border-bottom: solid 1px ${color.primary};
+`
 
 const NavLists = styled.ul`
   display: flex;
   list-style: none;
-  border-bottom: solid 1px #333;
+  width: 944px;
+  margin: 0 auto;
+  
   li {
     padding: 10px;
     width: 100%;
     text-align: center;
     font-weight: bold;
     &:hover {
-      background: red;
+      background: #f5f5f5;;
     }
     a {
       color: ${color.main};

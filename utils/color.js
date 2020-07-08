@@ -1,5 +1,5 @@
 const color = {
-  main: '#333',
+  primary: '#2c9ba6',
 };
 
 export { color }
