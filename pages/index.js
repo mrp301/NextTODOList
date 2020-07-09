@@ -1,13 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import styled from 'styled-components';
 import AppCard from '../components/atoms/AppCard';
 import AppPanel from '../components/atoms/AppPanel';
-import PanelList from '../components/organis/PanelList';
-import styles from '../styles/margin.scss';
-import TheHeader from '../components/organis/TheHeader';
-import NavList from '../components/organis/NavList';
+import PanelList from '../components/organisms/PanelList';
+import Layout from '../components/layouts/default';
 
 export default class SomePage extends React.Component {
   static async getInitialProps() {
@@ -16,51 +13,50 @@ export default class SomePage extends React.Component {
   }
 
   render () {
-    console.log(styles);
-
     return (
       <div>
         <Head>
-          <title>hoge</title>
+          <title>ホーム</title>
         </Head>
-        <TheHeader className={styles.example} />
-        <NavList />
-        <Main>
-          <Inner>
-            <AppCard
-              title="タイトル"
-              headerText={<span>テキストテキストテキスト<br />テキストテキストテキスト</span>}
-            >
-              <PanelList>
-                <AppPanel panelTitle="パネルタイトル">
-                  パネル1
-                </AppPanel>
-                <AppPanel panelTitle="パネルタイトル">
-                  <span>テキストテキストテキスト<br />テキストテキスト</span>
-                </AppPanel>
-                <AppPanel panelTitle="パネルタイトル">
-                  <span>テキストテキスト<br />テキストテキスト<br />テキストテキスト</span>
-                </AppPanel>
-                <AppPanel panelTitle="パネルタイトル">
-                  <span>テキストテキストテキスト<br />テキストテキスト</span>
-                </AppPanel>
-              </PanelList>
-            </AppCard>
-            <Link href="/hoge"><a>Hoge</a></Link>
-          </Inner>
-        </Main>
+        <Layout>
+          <Main>
+            <Inner>
+              <AppCard
+                title="タイトル"
+                headerText={<span>テキストテキストテキスト<br />テキストテキストテキスト</span>}
+              >
+                <PanelList>
+                  <AppPanel panelTitle="お題の作成">
+                    自分のお題を作成します。
+                  </AppPanel>
+                  <AppPanel panelTitle="お題の管理">
+                    <span>テキストテキストテキスト<br />テキストテキスト</span>
+                  </AppPanel>
+                  <AppPanel panelTitle="設定">
+                    <span>何かの設定ができます。</span>
+                  </AppPanel>
+                </PanelList>
+              </AppCard>
+              <br />
+              <AppCard
+                title="タイトル"
+                headerText={<span>テキストテキストテキスト<br />テキストテキストテキスト</span>}
+              >
+                あああ
+              </AppCard>
+            </Inner>
+          </Main>
+        </Layout>
       </div>
     )
   }
 }
 
-const Main = styled.main`
+const Main = styled.div`
+  margin-left: 180px;
   padding: 20px;
-  background: #f1f5f8;
-  min-height: 100vh;
 `;
 
 const Inner = styled.div`
   margin: 0 auto;
-  width: 944px;
 `;

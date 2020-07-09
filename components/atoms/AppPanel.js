@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 import { color } from '../../utils/color';
-import styles from '../../styles/base.scss';
+import Link from 'next/link';
 
 const AppPanel = ({ children, panelTitle }) => (
-  <Panel>
-    <Body>
-      <Title>{panelTitle}</Title>
-      <p>{children}</p>
-    </Body>
-  </Panel>
+  <Link href="/hoge" passHref>
+    <Panel>
+      <Icon><img src="../../static/images/icon_create.png" /></Icon>
+      <Body>
+        <Title>{panelTitle}</Title>
+        <p>{children}</p>
+      </Body>
+    </Panel>
+  </Link>
 );
 
+const PanelCount = 3;
 const Panel = styled.li`
-  width: 100%;
+  width: 30%;
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: solid 1px #e6e8eb;
   cursor: pointer;
   &:not(:last-child) {
     margin-right: 10px;
@@ -24,11 +29,20 @@ const Panel = styled.li`
   }
 `
 
+const Icon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  height: 160px;
+`
+
 const Title = styled.h2`
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: ${color.primary};
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 `
 
 const Body = styled.div`
@@ -38,10 +52,6 @@ const Body = styled.div`
 const Text = styled.p`
   font-size: 14px;
   color: red;
-`
-
-const Icon = styled.div`
-  padding: 10px;
 `
 
 const Menu = styled.div`

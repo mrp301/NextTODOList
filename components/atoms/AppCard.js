@@ -15,7 +15,7 @@ const AppCard = ({ children, title, headerText }) => (
 
 const Card = styled.div`
   background: #fff;
-  box-shadow: 0 0 6px -3px rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 `
 
 const Header = styled.div`

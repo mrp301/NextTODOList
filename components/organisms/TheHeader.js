@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const TheHeader = () => (
   <Header>
     <Inner>
-      ヘッダー
+      お題箱
     </Inner>
   </Header>
 );
