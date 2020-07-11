@@ -1,4 +1,5 @@
 import React from 'react';
+import List from '@/components/presentational/Task/List';
 
 export default class SomePage extends React.Component {
 
@@ -12,7 +13,10 @@ export default class SomePage extends React.Component {
   // サーバーサイドおよび、クライアントサイドで取得したデータをもとにレンダリング。
   render () {
     return (
-      <p>fuga</p>
+      <div>
+        <p>fuga2</p>
+        <List />
+      </div>
     )
   }
 }

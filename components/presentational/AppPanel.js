@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '../../utils/color';
+import { color } from '@/utils/color';
 import Link from 'next/link';
 
 const AppPanel = ({ children, panelTitle }) => (
@@ -8,13 +8,12 @@ const AppPanel = ({ children, panelTitle }) => (
       <Icon><img src="../../static/images/icon_create.png" /></Icon>
       <Body>
         <Title>{panelTitle}</Title>
-        <p>{children}</p>
+        <Text>{children}</Text>
       </Body>
     </Panel>
   </Link>
 );
 
-const PanelCount = 3;
 const Panel = styled.li`
   width: 30%;
   background: #fff;
@@ -42,7 +41,7 @@ const Title = styled.h2`
   margin-bottom: 4px;
   color: ${color.primary};
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 `
 
 const Body = styled.div`
@@ -51,10 +50,6 @@ const Body = styled.div`
 
 const Text = styled.p`
   font-size: 14px;
-  color: red;
-`
-
-const Menu = styled.div`
 `
 
 export default AppPanel;

@@ -11,6 +11,7 @@ const SideBar = () => (
       <li>セルフ</li>
       <li>消化済み</li>
       <li>全件</li>
+      <li>設定</li>
     </List>
     <User>
       <Name>mrbleのお題箱</Name>
