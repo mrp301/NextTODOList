@@ -1,18 +1,38 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import SideBarList from '@/components/organisms/SideBarList';
+import css from "@/styles/utils.scss"
+import { color } from '@/utils/color';
+
+const request = [
+  { text: '未消化', href: '/', icon: 'task' },
+  { text: 'セルフ', href: '/', icon: 'self' },
+  { text: 'お気に入り', href: '/', icon: 'star' },
+  { text: '消化済み', href: '/', icon: 'done' },
+  { text: '全て', href: '/', icon: 'all' },
+];
+
+const other = [
+  { text: '設定', href: '/', icon: 'setting' },
+  { text: 'スタイルガイド', href: '/styleGuide/', icon: 'guide' },
+]
 
 const SideBar = () => (
   <Aside>
     <Logo>
       <Link href="/"><a>お題箱</a></Link>
     </Logo>
-    <List>
-      <li>未消化</li>
-      <li>セルフ</li>
-      <li>消化済み</li>
-      <li>全件</li>
-      <li>設定</li>
-    </List>
+    <ListContainer>
+      <SideBarList
+        title="お題管理"
+        list={request}
+        className={css['marginBottm--small']}
+      />
+      <SideBarList
+        title="その他"
+        list={other}
+      />
+    </ListContainer>
     <User>
       <Name>mrbleのお題箱</Name>
       <Email>tubdaka490@gmail.com</Email>
@@ -31,7 +51,7 @@ const Aside = styled.aside`
   width: 180px;
   height: 100vh;
   color: #fff;
-  background: #323232;
+  background: ${color['glay3']};
 `
 const Logo = styled.h1`
   flex: 0 0 auto;
@@ -44,18 +64,8 @@ const Logo = styled.h1`
   }
 `
 
-const List = styled.ul`
+const ListContainer = styled.div`
   flex: 1 1 auto;
-  li {
-    display: flex;
-    align-items: center;
-    height: 32px;
-    color: #9f9f9f;
-    &:hover {
-      cursor: pointer;
-      background: #494949;
-    }
-  }
 `
 
 const User = styled.div`
@@ -68,7 +78,7 @@ const Name = styled.p`
 `
 
 const Email = styled.p`
-color: #9f9f9f;
+  color: ${color['glay1']};
   font-size: 12px;
   line-height: normal;
 `

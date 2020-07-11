@@ -9,7 +9,7 @@ export default({ children, type, handleClick, className }) => {
   min-width: 100px;
   font-weight: bold;
   border-radius: 4px;
-  background: ${type ? color[type] : color['glay']};
+  background: ${type ? color[type] : color['glay2']};
   cursor: pointer;
   &:hover {
     opacity: 0.8;

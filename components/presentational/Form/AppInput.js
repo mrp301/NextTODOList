@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropsTypes from 'prop-types';
 import styled from 'styled-components';
+import { color } from '@/utils/color';
 
 export default class AppInput extends Component {
   constructor(props) {
@@ -49,7 +50,8 @@ AppInput.defaultProps = {
 };
 
 const Input = styled.input`
-padding: 10px;
-width: 100%;
-border: ${({ isError }) => isError ? 'solid 2px #df0200' : ''};
+  padding: 10px;
+  width: 100%;
+  border: ${({ isError }) => isError ? 'solid 2px #df0200' : `solid 1px ${color['glay1']}`};
+  border-radius: 4px;
 `

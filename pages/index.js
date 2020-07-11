@@ -1,14 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import AppButton from '@/components/presentational/AppButton';
 import AppCard from '@/components/presentational/AppCard';
 import AppPanel from '@/components/presentational/AppPanel';
 import PanelList from '@/components/organisms/PanelList';
 import Layout from '@/components/layouts/default';
-import List from '@/components/presentational/Task/List';
-import AppInputWithLabel from '@/components/presentational/Form/AppInputWithLabel';
 import css from "@/styles/utils.scss"
+import settings from "@/utils/settings";
 
 export default class SomePage extends React.Component {
   static async getInitialProps() {
@@ -31,7 +29,7 @@ export default class SomePage extends React.Component {
     return (
       <div>
         <Head>
-          <title>ホーム</title>
+          <title>ホーム{settings.title}</title>
         </Head>
         <Layout>
           <Main>
@@ -52,45 +50,6 @@ export default class SomePage extends React.Component {
                     <span>何かの設定ができます。</span>
                   </AppPanel>
                 </PanelList>
-              </AppCard>
-              <AppCard
-                title="お題リスト"
-                headerText={<span>テキストテキストテキスト<br />テキストテキストテキスト</span>}
-                className={css['marginBottm--small']}
-              >
-                <List />
-              </AppCard>
-              <AppCard
-                title="フォームパーツ"
-                headerText={<span>ログイン・アカウント作成・お題作成用</span>}
-              >
-                <AppInputWithLabel
-                  label="メールアドレス"
-                  name="email"
-                  value={this.state.email}
-                  placeholder="メールアドレス"
-                  isError={false}
-                  errorText="メールアドレスが未入力です"
-                  onChange={e => this.handleChange(e)}
-                  className={css['marginBottm--xsmall']}
-                />
-                <AppInputWithLabel
-                  label="パスワード"
-                  name="password"
-                  value={this.state.password}
-                  placeholder="パスワード"
-                  isError={false}
-                  errorText="パスワードが未入力です"
-                  onChange={e => this.handleChange(e)}
-                  className={css['marginBottm--xsmall']}
-                />
-                <AppButton
-                  type="primary"
-                  handleClick={() => {console.log('ほげ')}}
-                  className={css['marginRight--xxsmall']}
-                >プライマリー
-                </AppButton>
-                <AppButton handleClick={() => {console.log('ほげ')}}>送信</AppButton> 
               </AppCard>
             </Inner>
           </Main>
